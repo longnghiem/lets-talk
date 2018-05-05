@@ -1,4 +1,4 @@
-<html>
+ <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,18 +17,49 @@
     <div class='main'>
       <form>
         <h3>1. Personal information</h3>
-        <input type='text' id='fullname' name='fullname' placeholder="Full name*">
-        <input type='text' id='phones' name='phones' placeholder="Phones*">
-        <input type='text' id='email' name='email' placeholder="Email*">
-        <input type='text' id='reemail' name='reemail' placeholder="Re-enter email*">
-        <textarea type='text' id='address' name='address' placeholder="Address*" rows="2"></textarea>
-        <div class='address-more'>
-          <input type='text' id='city' name='city' placeholder="City*">
-          <input type='text' id='state' name='state' placeholder="State">
-          <input type='text' id='region' name='region*' placeholder="Country/Region*">
-          <input type='text' id='zip' name='reemail' placeholder="Zip/Portal code">
+        <div class="form-grid">
+          <div class="labeltrick fullname">
+            <input type='text' id='fullname' name='fullname' required minlength='3' maxlength="100">
+            <label for="fullname">Full name*</label>
+          </div>
+          <div class="labeltrick phones">
+            <input type='number' id='phones' name='phones' required minlength='7' maxlength="20">
+            <label for="phones">Phones*</label>
+          </div>
+          <div class="labeltrick email">
+            <input type='email' id='email' name='email' required minlength='5' maxlength="100">
+            <label for="email">Email*</label>
+          </div>
+          <div class="labeltrick reemail">
+            <input type='email' id='reemail' name='reemail' required minlength='5' maxlength="100">
+            <label for="reemail">Re-enter email*</label>
+          </div>
+          <div class="labeltrick address">
+            <textarea type='text' id='address' name='address' required minlength='10' maxlength="200" rows="2"></textarea>
+            <label for="address">Address*</label>
+          </div>
+          <div class="labeltrick city">
+            <input type='text' id='city' name='city' required minlength='5' maxlength="100">
+            <label for="city">City*</label>
+          </div>
+          <div class="labeltrick state">
+            <input type='text' id='state' name='state' required minlength='5' maxlength="100">
+            <label for="state">State</label>
+          </div>
+          <div class="labeltrick region">
+            <input type='text' id='region' name='region' required minlength='5' maxlength="100">
+            <label for="region">Country/Region*</label>
+          </div>
+          <div class="labeltrick zip">
+            <input type='text' id='zip' name='zip' required minlength='5' maxlength="10">
+            <label for="zip">Zip/Portal code</label>
+          </div>
+          <div class="labeltrick extra-question">
+            <input type='text' id='extra-question' name='extra-question' required minlength='5' maxlength="200">
+            <label for="extra-question">How did you know about us?</label>
+          </div>
+
         </div>
-        <input type='text' id='extra-question' name='extra-question' placeholder="How did you know about us?">
 
         <h3>2. Skills and location</h3>
 
@@ -148,7 +179,6 @@
                   <span>Austin, Texas</span>
                 </label>
               </li>
-
             </ul>
           </div>
         </div>
@@ -157,9 +187,13 @@
         <p>tamen quid eram tempor sint malis dolor culpa quem quem quem export tamen sint
           dolore legam cillum amet multos fore nulla noster fugiat noster quae illum quis
           fore quem duis</p>
-        <input type="text" id='portfolio-input' name='portfolio' placeholder="Portfolio link*"></input>
+        <div class="labeltrick portfolio">
+          <input type='url' id='portfolio' name='portfolio' required minlength='5' maxlength="100">
+          <label for="portfolio">Portfolio link*</label>
+        </div>
+
         <textarea type='text' placeholder="Anything else (another link, availability, ect.)?" id='anything-else' rows="4"></textarea>
-        <div class='button'>Submit</div>
+        <button  type="submit">Submit</button>
       </form>
     </div>
   </div>

@@ -1,6 +1,7 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body {
   background-color: black;
@@ -22,10 +23,24 @@ header h1 {
 ul {
   list-style-type: none;
 }
-/* styles for main */
+
+/* main --------------------------- */
 .main {
   margin: 40px 100px;
   padding-bottom: 30px;
+}
+.form-grid {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3em 1em;
+  grid-template-areas:
+  'fullname fullname fullname phones'
+  'email    email    email    .'
+  'reemail  reemail  reemail  .'
+  'address  address  address  address'
+  'city     state    region   zip'
+  'extra-question extra-question extra-question extra-question'
 }
 h3 {
   font-weight: bold;
@@ -34,41 +49,74 @@ h3 {
   margin: 50px 0 20px 0;
   color: white;
 }
-input[type=text], textarea {
-  padding:20px 0 0 0;
-  margin: 8px 0;
-  box-sizing: border-box;
+input, textarea {
   border: none;
   border-bottom: 2px solid #6e757f;
   background: transparent;
-}
-input[type=text]:focus, textarea:focus {
-  outline-style: none;
-}
-#fullname, #email, #reemail {
-  width: 510px;
-  margin-right: 25px;
-}
-#phones, #city, #state, #region, #zip {
-  width: 160px;
-}
-#address, #extra-question {
-  padding-top: 20px;
   width: 100%;
+  color: #eee;
 }
-
- textarea {
+textarea {
   resize: none;
   line-height: 1.2;
 }
-.address-more {
-  display: flex;
-  justify-content: space-between;
+input:focus, textarea:focus {
+  outline-style: none;
 }
-::placeholder {
-    color: #6e757f;
-    opacity: 0.8;
+.fullname {
+  grid-area: fullname;
 }
+.phones {
+  grid-area: phones;
+}
+.email {
+  grid-area: email;
+}
+.reemail {
+  grid-area: reemail;
+}
+.address {
+  grid-area: address;
+}
+.city {
+  grid-area: city;
+}
+.state {
+  grid-area: state;
+}
+.region {
+  grid-area: region;
+}
+.zip {
+  grid-area: zip;
+}
+.extra-question {
+  grid-area: extra-question;
+}
+.labeltrick {
+  position: relative;
+}
+.labeltrick label {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  color: #6e757f;
+  transition: 1s ease all;
+}
+.address label {
+  bottom: 35px;
+}
+textarea:focus + label,
+textarea:valid + label {
+  color: #eee;
+}
+input:focus + label,
+input:valid + label {
+  color: #eee;
+  bottom: 30px;
+}
+
+
 
 /* styles for skill-location */
 .skill-location {
@@ -158,11 +206,15 @@ input[type=radio]:checked +label {
   background: transparent;
   margin-top: 30px;
 }
-.button {
+.portfolio {
+  margin-top: 2.5em;
+}
+button {
   padding: 10px 20px;
   background-color: #00b2f0;
-  width: 80px;
   margin: 30px 0 50px 0;
   text-align: center;
   font-weight: bold;
+  border: none;
+  color: #fff;
 }
