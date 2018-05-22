@@ -56,6 +56,7 @@ input, textarea {
   width: 100%;
   color: #eee;
 }
+
 textarea {
   resize: none;
   line-height: 1.2;
@@ -103,20 +104,27 @@ input:focus, textarea:focus {
   color: #6e757f;
   transition: 1s ease all;
 }
-.address label {
+#address_label {
   bottom: 35px;
 }
-textarea:focus + label,
-textarea:valid + label {
+#address_label .invalid {
+  color: red;
+}
+textarea:focus + label {
   color: #eee;
 }
-input:focus + label,
-input:valid + label {
+input:focus + label {
   color: #eee;
   bottom: 30px;
 }
-
-
+.labeltrick .label-up {
+  color: #eee;
+  bottom: 30px;
+}
+.labeltrick .invalid {
+  color: red;
+  bottom: 30px;
+}
 
 /* styles for skill-location */
 .skill-location {
